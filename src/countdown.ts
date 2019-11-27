@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'countdown',
@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['countdown.scss']
 })
 
-export class CountDown {
+export class CountDown implements OnInit, OnDestroy {
   @Input() units: any;
   @Input() end: any;
   @Input() displayString: String = '';
@@ -17,9 +17,19 @@ export class CountDown {
   display: any = [];
   displayNumbers: any = [];
   wasReached: Boolean = false;
+  
+  interval: any = null;
 
   constructor() {
-    setInterval(() => this._displayString(), 100);
+
+  }
+  
+  ngOnInit() {
+    this.interval = setInterval(() => this._displayString(), 100);
+  }
+  
+  ngOnDestroy() {
+    clearInterval(this.interval);
   }
 
   _displayString() {
