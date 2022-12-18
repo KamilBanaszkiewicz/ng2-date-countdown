@@ -27,9 +27,9 @@
     "@angular/core": "12.2.15"
   },
   "devDependencies": {
-    "@angular/cli": 12.2.15",
-    "@angular/common": "12.2.152",
-    "@angular/compiler": "12.2.152",
+    "@angular/cli": 12.2.14",
+    "@angular/common": "12.2.15",
+    "@angular/compiler": "12.2.15",
     "@angular/compiler-cli": "12.2.15",
     "@angular/core": "12.2.15",
     "colors": "^1.1.2",
